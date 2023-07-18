@@ -24,7 +24,7 @@ end
 -- NPc osotus juttu
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        Wait(0)
 
         local ped = PlayerPedId()
         local target, distance = ESX.Game.GetClosestEntity()
