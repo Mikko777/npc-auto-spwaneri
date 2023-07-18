@@ -1,4 +1,26 @@
 -- ok broidi eeekoo
+
+
+local npcModel = "npc_model"
+
+local npcCoords = vector3(coords)
+
+function SpawnNPCAndApproach(npcModel, npcCoords)
+    local playerPed = PlayerPedId()
+
+            local npc = CreatePed(4, npcModel, npcCoords.x, npcCoords.y, npcCoords.z, 0.0, true, false)
+            SetEntityHeading(npc, GetHeadingFromEntity(playerPed))
+            FreezeEntityPosition(npc, true)
+            SetEntityInvincible(npc, true)
+            SetBlockingOfNonTemporaryEvents(npc, true)
+
+            TriggerServerEvent("carSelectionMenu", npc)
+        end
+    end)
+end
+
+
+
 -- NPc osotus juttu
 Citizen.CreateThread(function()
     while true do
